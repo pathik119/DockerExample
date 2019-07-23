@@ -21,14 +21,14 @@ stage("Package") {
 stage("Docker build") {
      steps {
       
-          sh "docker build -t deepak_tomcat ."
+          sh "docker build -t pathik_tomcat ."
      }
 }
 
 stage("Deploy to staging") {
      steps {
  
-          sh "docker run -d -it -v /var/lib/jenkins/workspace/DockerPipeline/target/:/usr/local/tomcat/webapps/ -p 9090:8080 --name Testtomcat deepak_tomcat"
+          sh "docker run -d -it -v /var/lib/jenkins/workspace/DockerPipeline/target/:/usr/local/tomcat/webapps/ -p 9090:8080 --name Testtomcat pathik_tomcat"
      }
 }
 
